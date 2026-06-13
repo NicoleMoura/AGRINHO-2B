@@ -1,0 +1,750 @@
+/* ==========================================================================
+   1. VARIÁVEIS E DEFINIÇÕES BASE (:root)
+   ========================================================================== */
+:root {
+    --primary-color: #2E6F40;       /* Verde Campo - Sustentabilidade e Ecossistema */
+    --primary-hover: #1E4B2B;
+    --secondary-color: #D46A13;     /* Laranja Terra Vermelha - Energia e Solo */
+    --secondary-hover: #A34F0B;
+    --dark-color: #1A2E22;          /* Fundo Escuro para Contraste Sofisticado */
+    --light-color: #F4F7F5;         /* Fundo Claro Confortável */
+    --white: #FFFFFF;
+    --text-main: #333A35;
+    --text-muted: #606C64;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Tipografia Fluida com Clamp */
+    --font-h1: clamp(2.2rem, 5vw, 3.8rem);
+    --font-h2: clamp(1.8rem, 4vw, 2.6rem);
+    --font-h3: clamp(1.3rem, 2.5vw, 1.8rem);
+    --font-body: clamp(1rem, 1.2vw, 1.15rem);
+}
+
+/* Reset Geral */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-color);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+    transition: var(--transition);
+}
+
+/* Utilitários */
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 3rem);
+}
+
+.section-padding {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.background-light { background-color: var(--light-color); }
+.background-dark { background-color: var(--dark-color); }
+.text-white { color: var(--white); }
+.text-white h2, .text-white h3 { color: var(--white); }
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba(46, 111, 64, 0.1);
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-accent {
+    background-color: rgba(212, 106, 19, 0.15);
+    color: #FF943D;
+}
+
+.section-header {
+    max-width: 750px;
+    margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.section-header h2 {
+    font-size: var(--font-h2);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: var(--font-body);
+    color: var(--text-muted);
+}
+
+/* Botões Modernos */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 111, 64, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   2. ACESSIBILIDADE SUPERIOR
+   ========================================================================== */
+.accessibility-bar {
+    background-color: #111e16;
+    color: #e0e6e2;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.access-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.access-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.access-buttons button {
+    color: #e0e6e2;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.access-buttons button:hover, .access-buttons button:focus {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+.main-header {
+    background-color: var(--white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    color: var(--dark-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon-logo {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: clamp(1rem, 2vw, 2.5rem);
+}
+
+.nav-menu a {
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero-section {
+    padding: clamp(3rem, 6vw, 6rem) 0;
+    background: linear-gradient(135deg, #f9fbf9 0%, #eef3ef 100%);
+    position: relative;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: var(--font-h1);
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.hero-content p {
+    font-size: calc(var(--font-body) * 1.05);
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Grid Visual de Ativos da Agricultura */
+.farm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.farm-card {
+    background: var(--white);
+    padding: 35px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 4px solid transparent;
+}
+
+.farm-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.farm-card span {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-color);
+}
+
+.entry-2 i { color: var(--secondary-color); }
+.entry-1 { border-bottom-color: var(--primary-color); transform: translateY(-10px); }
+.entry-4 { border-bottom-color: var(--secondary-color); transform: translateY(10px); }
+
+/* ==========================================================================
+   5. MÉTRICAS / PROVA DE CONTEXTO
+   ========================================================================== */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.metric-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.metric-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.metric-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.metric-desc {
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. CARROSSEL DINÂMICO (PROGRAMAS)
+   ========================================================================== */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+
+.carousel-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.carousel-item {
+    background-color: var(--light-color);
+    padding: clamp(2rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.carousel-icon-box {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.carousel-info h3 {
+    font-size: var(--font-h3);
+    margin-bottom: 1rem;
+}
+
+.carousel-info p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.carousel-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.carousel-control {
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.carousel-control:hover { background-color: var(--primary-hover); }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    width: 28px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   7. SEÇÃO UNIQUE SPLIT (COOPERATIVISMO)
+   ========================================================================== */
+.unique-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+}
+
+.split-info h2 {
+    font-size: var(--font-h2);
+    margin-bottom: 1.5rem;
+}
+
+.split-info p {
+    color: #a3b8ab;
+    margin-bottom: 2rem;
+    font-size: var(--font-body);
+}
+
+.benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.text-accent { color: var(--secondary-color); }
+
+.split-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.feature-box:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+}
+
+.feature-box i {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+    color: #a3b8ab;
+}
+
+/* ==========================================================================
+   8. DEPOIMENTOS
+   ========================================================================== */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars {
+    color: #FFC107;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: var(--dark-color);
+    font-size: 1.05rem;
+}
+
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   9. ACORDEÃO DINÂMICO (FAQ)
+   ========================================================================== */
+.accordion-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+}
+
+.accordion-header-side h2 {
+    font-size: var(--font-h2);
+    margin-bottom: 1rem;
+}
+
+.accordion-header-side p {
+    color: var(--text-muted);
+}
+
+.big-faq-icon {
+    font-size: 6rem;
+    color: rgba(46, 111, 64, 0.08);
+    margin-top: 3rem;
+    display: block;
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    background-color: var(--light-color);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: 22px 30px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.accordion-trigger:hover, .accordion-trigger:focus {
+    background-color: rgba(46, 111, 64, 0.04);
+}
+
+.accordion-icon {
+    transition: var(--transition);
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--white);
+}
+
+.accordion-content {
+    padding: 25px 30px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+    color: var(--primary-color);
+}
+
+.accordion-item.active .accordion-panel {
+    max-height: 300px; /* Expansão segura de conteúdo */
+}
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.main-footer {
+    background-color: #0d1711;
+    color: #cbd5e1;
+    padding: clamp(3rem, 6vw, 6rem) 0 0 0;
+    border-top: 6px solid var(--primary-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 1.7fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    margin-bottom: 4rem;
+}
+
+.footer-info p {
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover { background-color: var(--primary-color); color: var(--white); }
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.footer-links a:hover { color: var(--secondary-color); }
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.footer-contact p i { color: var(--primary-color); }
+
+.law-note {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 25px 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   11. RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero-container { grid-template-columns: 1fr; }
+    .farm-grid { transform: none !important; margin-top: 2rem; }
+    .entry-1, .entry-4 { transform: none !important; }
+    .accordion-layout { grid-template-columns: 1fr; }
+    .big-faq-icon { display: none; }
+}
+
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* Otimização focada no CTA em telas mobile */
+    .footer-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .carousel-item { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .carousel-tags { justify-content: center; }
+}
+
+/* ==========================================================================
+   12. BLINDAGEM DO MODO DE CONTRASTE (ALTA ESPECIFICIDADE)
+   ========================================================================== */
+body.high-contrast, body.high-contrast *:not(i):not(.icon) {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #ff0 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+body.high-contrast a, body.high-contrast button {
+    color: #ff0 !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+}

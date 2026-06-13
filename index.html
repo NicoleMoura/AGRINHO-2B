@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terras do Centro-Sul | Agricultura Familiar da Região Central do Paraná</title>
+    <!-- Google Fonts: Inter e Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de Acessibilidade Superior -->
+    <div class="accessibility-bar" role="complementary" aria-label="Ferramentas de Acessibilidade">
+        <div class="container access-container">
+            <span>Acessibilidade:</span>
+            <div class="access-buttons">
+                <button id="btn-font-decrease" title="Diminuir Fonte (A-)" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="btn-font-increase" title="Aumentar Fonte (A+)" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="btn-contrast" title="Alternar Alto Contraste" aria-label="Alternar alto contraste"><i class="fa-solid fa-circle-half-stroke"></i> Alto Contraste</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="Terras do Centro-Sul Home">
+                <i class="fa-solid fa-seedling icon-logo"></i>
+                <span>Terras do <strong>Centro-Sul</strong></span>
+            </a>
+            <nav class="nav-menu" aria-label="Navegação Principal">
+                <a href="#sobre">História e Impacto</a>
+                <a href="#programas">Inovação e Programas</a>
+                <a href="#cooperativas">Cooperativas</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#faq">Dúvidas Frequentes</a>
+            </nav>
+            <a href="#contato" class="btn btn-primary header-btn">Faça Parte da Rede</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Introdução">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Sustentabilidade e Tecnologia Rural</span>
+                <h1>A Força da Terra que Alimenta o Paraná</h1>
+                <p>Conectamos a tradição da agricultura familiar da Região Central do Paraná com o futuro do mercado. Impulsionando cooperativas, pesquisadores e o desenvolvimento socioeconômico regional.</p>
+                <div class="hero-actions">
+                    <a href="#programas" class="btn btn-primary">Conhecer Programas</a>
+                    <a href="#sobre" class="btn btn-secondary">Nossos Indicadores</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Grid decorativa representando campos e plantações cultivadas -->
+                <div class="farm-grid" aria-hidden="true">
+                    <div class="farm-card entry-1"><i class="fa-solid fa-tractor"></i><span>Tecnologia do Campo</span></div>
+                    <div class="farm-card entry-2"><i class="fa-solid fa-wheat-awn"></i><span>Grãos Sustentáveis</span></div>
+                    <div class="farm-card entry-3"><i class="fa-solid fa-hands-holding-child"></i><span>Sucessão Familiar</span></div>
+                    <div class="farm-card entry-4"><i class="fa-solid fa-droplet"></i><span>Manejo de Água</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre / Indicadores -->
+    <section id="sobre" class="section-padding background-light" aria-label="Sobre nós">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alimentando Cidades, Preservando o Futuro</h2>
+                <p>A Região Central do Paraná destaca-se pela diversidade de cultivos, resiliência climática e organização cooperativista familiar.</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">+15mil</div>
+                    <div class="metric-title">Famílias Atendidas</div>
+                    <p class="metric-desc">Propriedades rurais que geram renda, emprego e mantêm viva a cultura do campo no coração do Paraná.</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">72%</div>
+                    <div class="metric-title">Alimento Saudável</div>
+                    <p class="metric-desc">Da mesa dos paranaenses da região Central provém do cultivo familiar sustentável livre de excessos químicos.</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">R$ 450M</div>
+                    <div class="metric-title">Injeção Econômica</div>
+                    <p class="metric-desc">Movimentados anualmente através de feiras regionais, agroindústrias e programas governamentais como PAA e PNAE.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Programas / Carrossel Dinâmico -->
+    <section id="programas" class="section-padding" aria-label="Programas e Inovação">
+        <div class="container">
+            <div class="section-header">
+                <h2>Programas de Apoio e Inovação Tecnológica</h2>
+                <p>Iniciativas focadas em levar conhecimento técnico, sustentabilidade ambiental e inserção de jovens e pesquisadores no ecossistema agrário.</p>
+            </div>
+            
+            <!-- Container do Carrossel que será populado pelo JS -->
+            <div class="carousel-wrapper">
+                <button class="carousel-control prev" id="carousel-prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-container" id="carousel-target">
+                    <!-- Inserção dinâmica via script.js -->
+                </div>
+                <button class="carousel-control next" id="carousel-next" aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots-target">
+                <!-- Pontos de navegação gerados dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Cooperativas e Parcerias -->
+    <section id="cooperativas" class="section-padding background-dark text-white" aria-label="Cooperativismo">
+        <div class="container unique-split">
+            <div class="split-info">
+                <span class="badge badge-accent">União Estratégica</span>
+                <h2>O Cooperativismo como Motor de Desenvolvimento</h2>
+                <p>Nenhum produtor rural precisa caminhar sozinho. Unimos pequenos e médios agricultores às principais redes de distribuição, pesquisa universitária da região e fomento de crédito sustentável.</p>
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check text-accent"></i> Acesso coletivo a maquinários de última geração.</li>
+                    <li><i class="fa-solid fa-check text-accent"></i> Parceria direta com Universidades e Órgãos Estaduais para pesquisas.</li>
+                    <li><i class="fa-solid fa-check text-accent"></i> Logística integrada para escoamento rápido de safras e laticínios.</li>
+                </ul>
+            </div>
+            <div class="split-cards">
+                <div class="feature-box">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Estudantes e Pesquisadores</h3>
+                    <p>Campos experimentais abertos para análises de solo, manejo biológico e desenvolvimento de patentes ecológicas regionais.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-building-shield"></i>
+                    <h3>Órgãos Públicos</h3>
+                    <p>Alinhamento técnico rigoroso com as diretrizes do IDR-Paraná e Secretarias de Agricultura para governança transparente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos / Prova Social -->
+    <section id="depoimentos" class="section-padding background-light" aria-label="Depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vozes de Quem Transforma o Nosso Campo</h2>
+                <p>Histórias reais de quem vive e desenvolve a agricultura familiar na nossa região central.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Com o suporte técnico do polo regional e o acesso às cooperativas, mudamos nosso manejo para orgânicos. Hoje vendemos para três municípios da Região Central."</p>
+                    <div class="testimonial-author">
+                        <strong>Seu Ademir Rocha</strong>
+                        <span>Produtor de Hortifrúti - Prudentópolis</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"A aproximação das cooperativas com a pesquisa acadêmica nos permitiu testar bioinsumos diretamente no solo regional, um ganho científico e prático absurdo."</p>
+                    <div class="testimonial-author">
+                        <strong>Dra. Mariana Lemos</strong>
+                        <span>Pesquisadora em Ciências Agrárias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de FAQ / Acordeão Dinâmico -->
+    <section id="faq" class="section-padding" aria-label="Perguntas Frequentes">
+        <div class="container accordion-layout">
+            <div class="accordion-header-side">
+                <h2>Dúvidas Frequentes sobre a Rede</h2>
+                <p>Esclarecimentos rápidos para agricultores, consumidores, estudantes e entidades parceiras interessadas em colaborar.</p>
+                <i class="fa-solid fa-circle-question big-faq-icon" aria-hidden="true"></i>
+            </div>
+            <div class="accordion-container" id="accordion-target" role="tablist">
+                <!-- Inserção dinâmica via script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA Final -->
+    <footer id="contato" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <a href="#" class="logo text-white">
+                    <i class="fa-solid fa-seedling icon-logo"></i>
+                    <span>Terras do <strong>Centro-Sul</strong></span>
+                </a>
+                <p>Fortalecendo a agricultura familiar, preservando os recursos naturais e gerando riqueza sustentável para o centro do Paraná.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <a href="#sobre">História</a>
+                <a href="#programas">Projetos</a>
+                <a href="#cooperativas">Cooperativas</a>
+                <a href="#faq">Perguntas</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato Institucional</h4>
+                <p><i class="fa-solid fa-envelope"></i> contato@terrasdocentrosul.org.br</p>
+                <p><i class="fa-solid fa-location-dot"></i> Central de Atendimento Regional - Guarapuava, PR</p>
+                <span class="law-note">Iniciativa em conformidade com as diretrizes estaduais de fomento ao desenvolvimento rural sustentável.</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-container">
+                <p>&copy; 2026 Terras do Centro-Sul. Todos os direitos reservados.</p>
+                <p>Desenvolvido com foco em acessibilidade e alta conversão rural.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
