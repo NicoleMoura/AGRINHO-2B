@@ -738,7 +738,7 @@ button {
 body.high-contrast, body.high-contrast *:not(i):not(.icon) {
     background-color: #000 !important;
     color: #fff !important;
-    border: 1px solid #ff0 !important;
+    border: 1px solid #ff0090 !important;
     background-image: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
